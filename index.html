@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Form Pendaftaran</title>
     <style>
-        /* Styling dasar untuk body dan container */
+        /* Styling dasar */
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right,#433f3f,#8b8989);
+            background: linear-gradient(to right, #433f3f, #8b8989);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,15 +19,15 @@
         .container {
             background-color: #ffffff;
             border-radius: 10px;
-            padding: 20px 30px;
+            padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 500px;
+            width: 90%;
+            max-width: 500px;
         }
         h3 {
             text-align: center;
             color: #333;
         }
-        /* Styling form dan tabel */
         form {
             margin-top: 20px;
         }
@@ -35,7 +36,7 @@
             border-collapse: collapse;
         }
         table tr td {
-            padding: 8px;
+            padding: 10px 5px;
         }
         input[type="text"],
         input[type="number"],
@@ -44,22 +45,23 @@
         select,
         textarea {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
             box-sizing: border-box;
-            transition: border-color 0.3s ease;
+            font-size: 16px;
         }
-        /* Styling tombol */
         input[type="submit"],
         input[type="reset"],
         button {
-            padding: 10px 20px;
-            margin: 5px;
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             background-color: #2193b0;
             color: white;
+            font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
@@ -68,12 +70,31 @@
         button:hover {
             background-color: #6dd5ed;
         }
-        /* Styling gambar logo */
         img {
             display: block;
             margin: 0 auto;
-            width: 100px;
+            width: 80px;
             height: auto;
+        }
+        /* Responsif untuk layar kecil */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            input, select, textarea {
+                font-size: 14px;
+            }
+            input[type="submit"],
+            input[type="reset"],
+            button {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -136,10 +157,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Rata-rata Nilai Raport</td>
-                    <td><input type="number" name="nilai_raport" step="0.01" required></td>
-                </tr>
-                <tr>
                     <td>Nama Ayah</td>
                     <td><input type="text" name="nama_ayah" required></td>
                 </tr>
@@ -185,30 +202,5 @@
             </table>
         </form>
     </div>
-    
-    <script>
-        // Menangani event submit form dengan konfirmasi
-        document.getElementById('pendaftaranForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // mencegah submit default
-            if (confirm('Apakah Anda yakin ingin menyimpan data ini?')) {
-                alert('Data berhasil disimpan!');
-                // Di sini bisa ditambahkan logika pengiriman data via AJAX jika diperlukan
-                event.target.reset();
-            } else {
-                alert('Data belum disimpan.');
-            }
-        });
-        
-        // Menambahkan efek interaktif pada elemen input saat mendapatkan fokus
-        let inputs = document.querySelectorAll('input, select, textarea');
-        inputs.forEach(function(input) {
-            input.addEventListener('focus', function() {
-                this.style.borderColor = '#2193b0';
-            });
-            input.addEventListener('blur', function() {
-                this.style.borderColor = '#ccc';
-            });
-        });
-    </script>
 </body>
 </html>
