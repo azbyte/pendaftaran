@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form Pendaftaran</title>
+    <style>
+        /* Styling dasar untuk body dan container */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right,#433f3f,#8b8989);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 500px;
+        }
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+        /* Styling form dan tabel */
+        form {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table tr td {
+            padding: 8px;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        /* Styling tombol */
+        input[type="submit"],
+        input[type="reset"],
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: #2193b0;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        button:hover {
+            background-color: #6dd5ed;
+        }
+        /* Styling gambar logo */
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="th.jpg" alt="logo">
+        <h3>Masukkan Data Pendaftaran</h3>
+        <form id="pendaftaranForm">
+            <table>
+                <tr>
+                    <td>No. Pendaftaran</td>
+                    <td><input type="number" name="no_pendaftaran" required></td>
+                </tr>
+                <tr>
+                    <td>Nama Pendaftar</td>
+                    <td><input type="text" name="nama" required></td>
+                </tr>
+                <tr>
+                    <td>Tempat Lahir</td>
+                    <td><input type="text" name="tempat_lahir" required></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td><input type="date" name="tanggal_lahir" required></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>
+                        <input type="radio" name="gender" value="lk" id="lk" required>
+                        <label for="lk">Laki-laki</label>
+                        <input type="radio" name="gender" value="pr" id="pr">
+                        <label for="pr">Perempuan</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Agama</td>
+                    <td>
+                        <select name="agama" required>
+                            <option value="">-- Pilih Agama --</option>
+                            <option value="Islam">Islam</option>
+                            <option value="Protestan">Protestan</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Budha">Budha</option>
+                            <option value="Konghuchu">Konghuchu</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Asal SMA</td>
+                    <td><input type="text" name="asal_sma" required></td>
+                </tr>
+                <tr>
+                    <td>Jurusan SMA</td>
+                    <td>
+                        <select name="jurusan_sma" required>
+                            <option value="">-- Pilih Jurusan --</option>
+                            <option value="IPA">IPA</option>
+                            <option value="IPS">IPS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rata-rata Nilai Raport</td>
+                    <td><input type="number" name="nilai_raport" step="0.01" required></td>
+                </tr>
+                <tr>
+                    <td>Nama Ayah</td>
+                    <td><input type="text" name="nama_ayah" required></td>
+                </tr>
+                <tr>
+                    <td>Nama Ibu</td>
+                    <td><input type="text" name="nama_ibu" required></td>
+                </tr>
+                <tr>
+                    <td>Alamat</td>
+                    <td><textarea name="alamat" rows="3" required></textarea></td>
+                </tr>
+                <tr>
+                    <td>Nomor Telepon</td>
+                    <td><input type="tel" name="no_telp" required></td>
+                </tr>
+                <tr>
+                    <td>Fakultas yang Dipilih</td>
+                    <td>
+                        <select name="fakultas" required>
+                            <option value="">-- Pilih Fakultas --</option>
+                            <option value="Teknik">Teknik</option>
+                            <option value="Ilmu Pendidikan">Ilmu Pendidikan</option>
+                            <option value="MIPA">MIPA</option>
+                            <option value="Ilmu Sosial">Ilmu Sosial</option>
+                            <option value="Bahasa dan Seni">Bahasa dan Seni</option>
+                            <option value="Ilmu Keolahragaan">Ilmu Keolahragaan</option>
+                            <option value="Ekonomi dan Bisnis">Ekonomi dan Bisnis</option>
+                            <option value="Pariwisata dan Perhotelan">Pariwisata dan Perhotelan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Prodi</td>
+                    <td><input type="text" name="prodi" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="submit" value="Simpan">
+                        <input type="reset" value="Reset">
+                        <button type="button" onclick="window.history.back();">Kembali</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+    <script>
+        // Menangani event submit form dengan konfirmasi
+        document.getElementById('pendaftaranForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // mencegah submit default
+            if (confirm('Apakah Anda yakin ingin menyimpan data ini?')) {
+                alert('Data berhasil disimpan!');
+                // Di sini bisa ditambahkan logika pengiriman data via AJAX jika diperlukan
+                event.target.reset();
+            } else {
+                alert('Data belum disimpan.');
+            }
+        });
+        
+        // Menambahkan efek interaktif pada elemen input saat mendapatkan fokus
+        let inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(function(input) {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = '#2193b0';
+            });
+            input.addEventListener('blur', function() {
+                this.style.borderColor = '#ccc';
+            });
+        });
+    </script>
+</body>
+</html>
